@@ -52,15 +52,17 @@ const PanelCards = () => {
       {cards.map((card, index) => (
         <div
           key={index}
-          className="border-[10px] border-[rgb(255,255,255,0.5)] lg:h-[666px]"
+          className="lg:border-[10px] border-[rgb(255,255,255,0.5)] lg:h-[666px] col-auto sm:col-start-2 sm:col-end-7 lg:col-auto"
         >
           <div className="flex flex-col lg:bg-white px-[26px] pb-[10px] pt-0 h-full">
             <div className="hidden lg:block">
-              <div className=" flex justify-center p-8">
+              {/* <div className=" flex justify-center p-8">
                 <img src={card.image} alt="" />
+              </div> */}
+              <div style={{background: `url(${card.image}) center 25px no-repeat`} } className="bg-center bg-no-repeat pt-[82px] h-[136px]">
+                <h2>{card.title}</h2>
               </div>
-              <h2>{card.title}</h2>
-              <span className="w-1/4 h-auto my-4 mx-auto border-b-[3px] border-gray-300"></span>
+              <span className=" inline-block w-1/4 h-auto mb-4 mx-auto border-b-[3px] px-26 pt-4 pb-[19px] border-gray-300"></span>
               <p className="  text-gray-700 text-[1.125em] h-[374px]">
                 {card.text1}
                 <br />
@@ -69,19 +71,21 @@ const PanelCards = () => {
               </p>
             </div>
             <button className=" text-white bg-[#0071bc] border-2 border-solid border-[#205493] px-[30px] py-[8px]">
-              <span>
-                <strong className=" text-[1.125em] uppercase">
-                  {card.textButton}
-                </strong>
-                <br />
-                {Object.keys(card.textButtonExtra).length !== 0 && (
-                  <sub className="text-[10px]">
-                    {card.textButtonExtra.one}
-                    <br />
-                    {card.textButtonExtra.two}
-                  </sub>
-                )}
-              </span>
+              <div>
+                <span className="my-2">
+                  <strong className=" text-[1.125em] uppercase">
+                    {card.textButton}
+                  </strong>
+                  <br />
+                  {Object.keys(card.textButtonExtra).length !== 0 && (
+                    <sub className="text-[10px]">
+                      {card.textButtonExtra.one}
+                      <br />
+                      {card.textButtonExtra.two}
+                    </sub>
+                  )}
+                </span>
+              </div>
             </button>
           </div>
         </div>

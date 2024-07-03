@@ -6,8 +6,6 @@
   height: 20.38px;
 }
 
-
-
 .us-official .container {
   background: url("../public/flag.png") left 1px no-repeat;
 
@@ -85,7 +83,7 @@
   display: flex;
   flex-direction: column;
   background-color: #8b0000;
-  padding: 2em 3em;
+  padding: 2em 5em;
   width: 100%;
 }
 
@@ -93,11 +91,28 @@
   font-weight: 600;
 }
 
-
 /*HOME*/
-.home-wrapper {
-  background: url("../public/white-house.jpg") 0 -195px no-repeat;
-  background-size: cover;
+
+
+
+@media (max-width: 1024px) {
+  .home-wrapper {
+    background-color: #046b99;
+  }
+}
+@media (min-width: 1024px) {
+  .home-wrapper {
+    background: url("../public/white-house.jpg") 0 -195px no-repeat;
+    background-size: cover;
+
+  }
+
+@media (max-width: 1200px) {
+  .home-wrapper {
+    background-position: center 0;
+  }
+}
+
 }
 
 .home-wrapper h2 {
@@ -109,12 +124,11 @@
 
 .home-wrapper h3 {
   color: #1c3764;
-    font-size: 2.1em;
-    font-family: "Playfair Display", "Times New Roman", Times, serif;
-    font-weight: 300;
-    margin: 0 auto;
-    padding: 0;
-    text-align: center;
-    line-height: 0.925em;
+  font-size: 2.1em;
+  font-family: "Playfair Display", "Times New Roman", Times, serif;
+  font-weight: 300;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  line-height: 0.925em;
 }
-

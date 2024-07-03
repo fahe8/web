@@ -7,7 +7,7 @@ const AnnoucementBody = () => {
   return (
     <>
       {active && (
-        <article className="announcement-body relative  ">
+        <article className="announcement-body relative">
           <div className="flex gap-1 pb-4 pl-4 justify-start flex-wrap flex-row-reverse text-end text-[13px]">
             <span className="text-white">
               جهت دريافت و چاپ مدارك قانوني تان لطفا به لینك مراجعه فرمائيد
