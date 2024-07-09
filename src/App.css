@@ -34,8 +34,17 @@
 .logo-left {
   padding-right: 30px;
 }
+
+.logo-left:hover {
+  opacity: 0.8;
+}
+
 .logo-right {
   padding: 0px 30px;
+}
+
+.logo-right:hover {
+  opacity: 0.8;
 }
 
 .navbar .navbar-row {
@@ -131,4 +140,11 @@
   padding: 0;
   text-align: center;
   line-height: 0.925em;
+}
+
+footer {
+  color: #fff;
+  background: #1c3764 url('../public/logo_line.png') center 15px no-repeat;
+  padding: 110px 0 25px 0;
+  font-size: 1.15em;
 }

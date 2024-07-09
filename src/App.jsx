@@ -3,7 +3,6 @@ import "./App.css";
 import NavBar from "./header/NavBar";
 import AnnoucementBody from "./announcementBody/AnnoucementBody";
 import PanelCards from "./panelCards/PanelCards";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Instructionpdf from "./instructionpdf/Instructionpdf";
 import FaqCards from "./faqCards/FaqCards";
 
@@ -62,6 +61,43 @@ function App() {
             </div>
           </div>
         </section>
+
+        <footer className=" font-bold">
+          <div className="container lg:w-full md:w-[790px]">
+            <ul className="flex gap-1">
+              <div className="lg:w-1/6 md:w-1/4 sm:w-1/4 w-11/12">
+                <li className="mb-[19px]">
+                  <a href="">CBP Info Center's FAQ about I-94</a>
+                </li>
+              </div>
+              <div className="lg:w-1/6 md:w-1/6 sm:w-1/6 w-11/12">
+                <li className="mb-[19px]">
+                  <a href="">Contact CBP</a>
+                </li>
+              </div>
+              <div className="lg:w-1/6 md:w-1/12 sm:w-1/12 w-11/12">
+                <li className="mb-[19px]">
+                  <a href="">About CBP</a>
+                </li>
+              </div>
+              <div className="lg:w-1/6 md:w-1/6 sm:w-1/6 w-11/12">
+                <li className="mb-[19px]">
+                  <a href="">Vulnerability Disclosure</a>
+                </li>
+              </div>
+              <div className="lg:w-1/6 md:w-1/6 sm:w-1/6 w-11/12">
+                <li className="mb-[19px]">
+                  <a href="">Accessibility</a>
+                </li>
+              </div>
+              <div className="lg:w-1/6 md:w-1/6 sm:w-1/6 w-11/12">
+                <li className="mb-[19px]">
+                  <a href="">Privacy Policy</a>
+                </li>
+              </div>
+            </ul>
+          </div>
+        </footer>
       </header>
     </>
   );

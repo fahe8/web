@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
+import Modal from "../modal/Modal";
 
 const FaqCards = () => {
+  const [showModal, setShowModal] = useState(false);
+  const [selectedCard, setSelectedCard] = useState(null);
+
   const cards = [
     {
       title:
@@ -27,10 +31,17 @@ const FaqCards = () => {
         "Yes. The website will provide travel history going back ten years from...",
     },
   ];
+
+  const handleCardClick = (index) => {
+    setSelectedCard(cards[index]);
+    setShowModal(true);
+  };
+
   return (
     <>
       {cards.map((card, index) => (
         <div
+          onClick={() => handleCardClick(index)}
           key={index + "a"}
           className={`text-gray-700 text-[1.1em] h-[320px] p-[28px] px-[23px] pb-[25px] text-center border-solid border-[3px] border-[#d3c6ab] flex flex-col cursor-pointer ${index == 1 || index == 3 ? "bg-[#fefaf1]" : "bg-white"} ${index < cards.length - 1 ? "border-r-0" : ""} hover:bg-[#fdf4e3]`}
         >
@@ -41,6 +52,7 @@ const FaqCards = () => {
           <span className="text-[1.1em] font-semibold text-[#333]">{card.subtitle}</span>
         </div>
       ))}
+      {showModal && <Modal setShowModal={setShowModal} selectedCard={selectedCard} />}
     </>
   );
 };
