@@ -2,9 +2,12 @@ import "./App.css";
 
 import NavBar from "./header/NavBar";
 import AnnoucementBody from "./announcementBody/AnnoucementBody";
-import PanelCards from "./panelCards/PanelCards";
-import Instructionpdf from "./instructionpdf/Instructionpdf";
+
 import FaqCards from "./faqCards/FaqCards";
+import { Routes, Route } from "react-router-dom";
+import Home from "./home/Home";
+import Apply from "./apply/Apply";
+import Footer from "./footer/Footer";
 
 function App() {
   return (
@@ -20,35 +23,12 @@ function App() {
         <NavBar />
         <AnnoucementBody />
 
-        <Instructionpdf />
-
         <section>
           <div className="home-wrapper">
-            <div className="container lg:w-full md:w-[790px] text-center ">
-              <div className=" pb-[40px]">
-                <div className=" mx-auto py-[24px] lg:py-[60px]  w-[80%] ">
-                  <div className="bg-[rgba(22,57,99,0.85)] py-6 w-full">
-                    <h1 className="text-[1.5em] lg:text-[2.15em] font-extralight m-0 w-[80%] mx-auto px-[24px] text-white">
-                      Official Site for Travelers Visiting the United States:
-                      Apply for or Retrieve Form I-94, Request Travel History
-                      and Check Travel Compliance
-                    </h1>
-                    <p className="text-[0.85em] lg:text-[1.4em] w-[98%] m-0 mx-auto mt-5 text-white">
-                      International travelers visiting the United States can
-                      apply for or retrieve their I-94 admission number/record
-                      (which is proof of legal visitor status) as well as
-                      retrieve a limited travel history of their U.S. arrivals
-                      and departures.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="w-full grid xl:grid-cols-4 lg:grid-cols-2 lg:gap-4 sm:grid-cols-7">
-                  <PanelCards />
-                </div>
-              </div>
-            </div>
-
+            <Routes>
+              <Route path="/home" element={<Home />}></Route>
+              <Route path="/apply" element={<Apply />}></Route>
+            </Routes>
             <div className=" hidden lg:block bg-white text-center pt-6 pb-14">
               <h3 className="">
                 Frequently Asked Questions
@@ -63,40 +43,7 @@ function App() {
         </section>
 
         <footer className=" font-bold">
-          <div className="container lg:w-full md:w-[790px]">
-            <ul className="flex gap-1">
-              <div className="lg:w-1/6 md:w-1/4 sm:w-1/4 w-11/12">
-                <li className="mb-[19px]">
-                  <a href="">CBP Info Center's FAQ about I-94</a>
-                </li>
-              </div>
-              <div className="lg:w-1/6 md:w-1/6 sm:w-1/6 w-11/12">
-                <li className="mb-[19px]">
-                  <a href="">Contact CBP</a>
-                </li>
-              </div>
-              <div className="lg:w-1/6 md:w-1/12 sm:w-1/12 w-11/12">
-                <li className="mb-[19px]">
-                  <a href="">About CBP</a>
-                </li>
-              </div>
-              <div className="lg:w-1/6 md:w-1/6 sm:w-1/6 w-11/12">
-                <li className="mb-[19px]">
-                  <a href="">Vulnerability Disclosure</a>
-                </li>
-              </div>
-              <div className="lg:w-1/6 md:w-1/6 sm:w-1/6 w-11/12">
-                <li className="mb-[19px]">
-                  <a href="">Accessibility</a>
-                </li>
-              </div>
-              <div className="lg:w-1/6 md:w-1/6 sm:w-1/6 w-11/12">
-                <li className="mb-[19px]">
-                  <a href="">Privacy Policy</a>
-                </li>
-              </div>
-            </ul>
-          </div>
+          <Footer/>
         </footer>
       </header>
     </>

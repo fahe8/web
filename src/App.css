@@ -83,8 +83,14 @@
   border-bottom: 2px solid #cd2026;
 }
 
-.navbar-item:focus {
-  background-color: #fff;
+.navbar-item.selected {
+  background-color: white;
+  
+}
+
+.navbar-item.selected a span {
+  border-bottom: 2px solid #cd2026;
+  color: #1c3764;
 }
 
 /* texto con fondo rojo*/
@@ -102,8 +108,6 @@
 
 /*HOME*/
 
-
-
 @media (max-width: 1024px) {
   .home-wrapper {
     background-color: #046b99;
@@ -113,15 +117,13 @@
   .home-wrapper {
     background: url("../public/white-house.jpg") 0 -195px no-repeat;
     background-size: cover;
-
   }
 
-@media (max-width: 1200px) {
-  .home-wrapper {
-    background-position: center 0;
+  @media (max-width: 1200px) {
+    .home-wrapper {
+      background-position: center 0;
+    }
   }
-}
-
 }
 
 .home-wrapper h2 {
@@ -138,13 +140,13 @@
   font-weight: 300;
   margin: 0 auto;
   padding: 0;
-  text-align: center;
+  
   line-height: 0.925em;
 }
 
 footer {
   color: #fff;
-  background: #1c3764 url('../public/logo_line.png') center 15px no-repeat;
+  background: #1c3764 url("../public/logo_line.png") center 15px no-repeat;
   padding: 110px 0 25px 0;
   font-size: 1.15em;
 }

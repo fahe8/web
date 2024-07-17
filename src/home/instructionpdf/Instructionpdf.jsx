@@ -1,5 +1,5 @@
 import React from "react";
-import "../App.css";
+import "../../App.css";
 const Instructionpdf = () => {
   return (
     <div className=" bg-[#003366]">
