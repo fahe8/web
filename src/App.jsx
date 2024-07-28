@@ -1,15 +1,17 @@
 import "./App.css";
-
 import NavBar from "./header/NavBar";
 import AnnoucementBody from "./announcementBody/AnnoucementBody";
-
 import FaqCards from "./faqCards/FaqCards";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Home from "./home/Home";
 import Apply from "./apply/Apply";
 import Footer from "./footer/Footer";
+import Pqr from "./pqr/Pqr";
+import MostRecent from "./mostRecent/MostRecent";
 
 function App() {
+  const location = useLocation();
+
   return (
     <>
       <header className="">
@@ -28,22 +30,26 @@ function App() {
             <Routes>
               <Route path="/home" element={<Home />}></Route>
               <Route path="/apply" element={<Apply />}></Route>
+              <Route path="/faq" element={<Pqr />}></Route>
+              <Route path="/recent" element={<MostRecent/>}></Route>
             </Routes>
-            <div className=" hidden lg:block bg-white text-center pt-6 pb-14">
-              <h3 className="">
-                Frequently Asked Questions
-                <br />
-                <span>related to this page</span>
-              </h3>
-              <div className="bg-[#ede7dc] p-[10px] grid grid-cols-4 container lg:w-full md:w-[790px] my-6">
-                <FaqCards />
+            {location.pathname !== "/faq" && (
+              <div className=" hidden lg:block bg-white text-center pt-6 pb-14">
+                <h3 className="">
+                  Frequently Asked Questions
+                  <br />
+                  <span>related to this page</span>
+                </h3>
+                <div className="bg-[#ede7dc] p-[10px] grid grid-cols-4 container lg:w-full md:w-[790px] my-6">
+                  <FaqCards />
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </section>
 
         <footer className=" font-bold">
-          <Footer/>
+          <Footer />
         </footer>
       </header>
     </>
