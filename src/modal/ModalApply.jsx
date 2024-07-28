@@ -26,7 +26,7 @@ const ModalApply = ({ closeModal }) => {
                   alt=""
                   srcset=""
                 />
-                <ul className="inline-block ">
+                <ul className="hidden sm:inline-block ">
                   <li className="bg-red-700 text-white px-1 absolute bottom-24 left-20">
                     1
                   </li>

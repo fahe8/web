@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 const PanelCards = () => {
   const cards = [
     {
@@ -15,6 +15,7 @@ const PanelCards = () => {
         one: "(Land Border/Selected Ferry",
         two: "Travelers Only",
       },
+      link: "/home"
     },
     {
       image: "/public/doc.png",
@@ -25,6 +26,7 @@ const PanelCards = () => {
         "If someone requests your admission information, this is the form you would provide.",
       textButton: "get most recent I-94",
       textButtonExtra: {},
+      link: "/apply"
     },
     {
       image: "/public/bag.png",
@@ -34,6 +36,7 @@ const PanelCards = () => {
       text2: "",
       textButton: "view travel history",
       textButtonExtra: {},
+      link: "/recent"
     },
     {
       image: "/public/red.png",
@@ -42,8 +45,9 @@ const PanelCards = () => {
         "View your compliance with the terms of your admission into the U.S. here. Please know, this tool is to assist you but is not an official record for legal purposes.",
       text2:
         "Only certain classes of Visa Waiver Program admissions are currently able to utilize this tool.",
-      textButton: "view travel history",
+      textButton: "view Compliance",
       textButtonExtra: {},
+      link: "/history"
     },
   ];
 
@@ -56,10 +60,12 @@ const PanelCards = () => {
         >
           <div className="flex flex-col lg:bg-white px-[26px] pb-[10px] pt-0 h-full">
             <div className="hidden lg:block">
-              {/* <div className=" flex justify-center p-8">
-                <img src={card.image} alt="" />
-              </div> */}
-              <div style={{background: `url(${card.image}) center 25px no-repeat`} } className="bg-center bg-no-repeat pt-[82px] h-[136px]">
+              <div
+                style={{
+                  background: `url(${card.image}) center 25px no-repeat`,
+                }}
+                className="bg-center bg-no-repeat pt-[82px] h-[136px]"
+              >
                 <h2>{card.title}</h2>
               </div>
               <span className=" inline-block w-1/4 h-auto mb-4 mx-auto border-b-[3px] px-26 pt-4 pb-[19px] border-gray-300"></span>
@@ -70,23 +76,27 @@ const PanelCards = () => {
                 {card.text2 !== "" && card.text2}
               </p>
             </div>
-            <button className=" text-white bg-[#0071bc] border-2 border-solid border-[#205493] px-[30px] py-[8px]">
-              <div>
-                <span className="my-2">
-                  <strong className=" text-[1.125em] uppercase">
-                    {card.textButton}
-                  </strong>
-                  <br />
-                  {Object.keys(card.textButtonExtra).length !== 0 && (
-                    <sub className="text-[10px]">
-                      {card.textButtonExtra.one}
-                      <br />
-                      {card.textButtonExtra.two}
-                    </sub>
-                  )}
-                </span>
-              </div>
-            </button>
+           <div className="w-full">
+           <Link to={card.link}>
+              <button className=" text-white bg-[#0071bc] border-2 border-solid border-[#205493] px-[30px] py-[8px] max-lg:w-full">
+                <div>
+                  <span className="my-2">
+                    <strong className=" text-[1.125em] uppercase">
+                      {card.textButton}
+                    </strong>
+                    <br />
+                    {Object.keys(card.textButtonExtra).length !== 0 && (
+                      <sub className="text-[10px]">
+                        {card.textButtonExtra.one}
+                        <br />
+                        {card.textButtonExtra.two}
+                      </sub>
+                    )}
+                  </span>
+                </div>
+              </button>
+            </Link>
+           </div>
           </div>
         </div>
       ))}

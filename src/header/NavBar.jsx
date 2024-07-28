@@ -65,7 +65,7 @@ const NavBar = () => {
       <div className="container lg:w-full md:w-[760px] logo-row">
         <ul className="row">
           <li className="logo-i94 ">
-            <Link to="/I94/#/home">
+            <Link to="/home">
               <img
                 className="logo-left"
                 src="../public/logo-i94.png"
@@ -75,7 +75,7 @@ const NavBar = () => {
             </Link>
           </li>
           <li>
-            <Link to="/I94/#/home">
+            <Link to="/home">
               <img
                 className="logo-right"
                 src="../public/logo.png"

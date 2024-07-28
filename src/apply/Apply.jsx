@@ -21,22 +21,23 @@ const Apply = () => {
     setDni(e.target.value);
   };
 
-  const handleSearch = () => {
-    buscarUsuarioPorDNI(dni)
+  const handleSearch = (event) => {
+    event.preventDefault();
+    buscarUsuarioPorDNI(dni);
   };
 
   const ocultarDNIParcial = (dni) => {
     // Usamos una expresión regular para reemplazar todos los dígitos excepto los últimos cuatro
-    const dniOculto = dni.replace(/\d(?=\d{4})/g, '*');
+    const dniOculto = dni.replace(/\d(?=\d{4})/g, "*");
     return dniOculto;
-  }
+  };
   return (
     <section>
       <div className="text-center bg-white py-4">
         <div className="container lg:w-full md:w-[790px] flex justify-center">
           <div className="">
             <h1 className="text-[#1c3764] text-3xl font-light text-center ">
-              Welcome to I94 Know your status
+              Cita cbp One
             </h1>
             <sub className=" color-[#1c3764] text-xl">
               <strong>For Land Border and Selected Ferry Ports</strong>
@@ -66,56 +67,100 @@ const Apply = () => {
           <div className=" lg:flex justify-between gap-6 lg:px-44 py-8">
             <div className=" w-full lg:w-7/12 ">
               <div className="border-solid border-8 border-[rgba(255, 255, 255, 0.5)] bg-white p-4 flex  flex-col justify-center items-center ">
-                <i class="fa fa-user-circle-o text-[100px] text-[#1c3764]" aria-hidden="true"></i>
+                <i
+                  class="fa fa-user-circle-o text-[100px] text-[#2b5283]"
+                  aria-hidden="true"
+                ></i>
 
-                <h2 className="text-center">Enter you DNI</h2>
+                <h2 className="text-center">Ingrese número de confirmación</h2>
                 <div className="p-4">
-                  <input
-                    type="text"
-                    value={dni}
-                    onChange={handleChange}
-                    placeholder="Ingrese el DNI"
-                    className="border rounded px-2 py-1"
-                  />
-                  <button
-                    onClick={handleSearch}
-                    className="ml-2 bg-blue-500 text-white rounded px-4 py-1"
-                  >
-                    Buscar
-                  </button>
+                  <form onClick={handleSearch} className=" flex justify-center">
+                    <input
+                      type="text"
+                      value={dni}
+                      onChange={handleChange}
+                      placeholder="Número de confirmación"
+                      className="border rounded px-2 py-1"
+                    />
+                    <button className="ml-2 bg-[#2b5283] text-white rounded px-4 py-1">
+                      Buscar
+                    </button>
+                  </form>
 
                   {usuario && (
-                    <div className="mt-4 ">
-                      <i class="fa fa-check-circle" aria-hidden="true"></i>
-                      <p>Señor/a {usuario.nombre} identificado como {ocultarDNIParcial(usuario.DNI)} ya se encuentra su estado en proceso</p>
-                      <p></p>
-                      <h2 className="text-lg font-bold">
-                        Información del usuario:
-                      </h2>
-                      <p>
-                        <strong>Nombre:</strong> {usuario.nombre}
-                      </p>
-                      <p>
-                        <strong>Apellido:</strong> {usuario.apellido}
-                      </p>
-                      <p>
-                        <strong>DNI:</strong> {usuario.DNI}
-                      </p>
-                      <p>
-                        <strong>Edad:</strong> {usuario.edad}
-                      </p>
-                      <p>
-                        <strong>Fecha de nacimiento:</strong>{" "}
-                        {usuario.fechaNacimiento}
-                      </p>
-                      <p>
-                        <strong>Fecha de expiración:</strong>{" "}
-                        {usuario.fechaExpiracion}
-                      </p>
-                      <p>
-                        <strong>Lugar de nacimiento:</strong>{" "}
-                        {usuario.lugarNacimiento}
-                      </p>
+                    <div className="mt-4 border">
+                      <div className="bg-[#2b5283] text-center text-white text-xl py-2">
+                        <p>Información Anticipada</p>
+                      </div>
+                      <div className="text-center px-4 py-2">
+                        <div className="flex flex-col justify-center gap-2 text-green-600">
+                          <i
+                            class="fa fa-check-circle text-[70px] "
+                            aria-hidden="true"
+                          ></i>
+                          <p className="  font-medium text-2xl">
+                            CITA PROGRAMADA
+                          </p>
+                        </div>
+                      </div>
+                      <div className=" py-4 grid gap-2 ">
+                        <div className="grid gap-2 px-4">
+                          {" "}
+                          <div className="text-center text-[#1c3764] font-bold">
+                            <p>
+                              {"Su cita está programada: "} {usuario[0].puerto}
+                            </p>
+                            <p>
+                              {"el "} {usuario[0].fecha}
+                            </p>
+                          </div>
+                          <p>
+                            {
+                              "Su cita en un puerto de entrada se programó con éxito"
+                            }
+                          </p>
+                          <p>
+                            {
+                              "Guarde su(s) números de confirmación. Se envió un correo electrónico de confirmación a la dirección de correo electrónico que utilizó para iniciar sesión en CBP One "
+                            }
+                          </p>
+                        </div>
+                        <div>
+                          <div className="w-full bg-gray-100 text-[#1c3764] flex justify-between px-2 text-sm py-2">
+                            <p>VIAJEROS</p>
+                            NÚMERO DE CONFIRMACIÓN
+                          </div>
+                          {
+                            usuario?.map((user,idx) => (
+                              <div  className=" uppercase flex justify-between px-4 py-2">
+                              <p>
+                                {user.nombre} {user.apellido}
+                              </p>
+                              <p>{user.codigo}</p>
+                            </div>
+                            ))
+                          }
+                        </div>
+                        <div>
+                          <div className="w-full bg-gray-100 text-[#1c3764] flex justify-between px-2 text-sm py-2">
+                            <p>VIAJEROS</p>
+                            NÚMERO DE CONFIRMACIÓN
+                          </div>
+                          <div className="px-4 grid gap-2">
+                            <div>
+                              {" "}
+                              <p className="text-xs text-gray-400">
+                                Puerto de entrada
+                              </p>
+                              <p>{usuario[0].puerto}</p>
+                            </div>
+                            <div>
+                              <p className="text-xs text-gray-400">fecha</p>
+                              <p>{usuario[0].fecha}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   )}
                 </div>
@@ -141,7 +186,7 @@ const Apply = () => {
               <div className="border-solid border-8 border-[rgba(255, 255, 255, 0.5)] bg-white p-4 grid grid-cols-1 gap-3">
                 <p className="  text-xl">Sample Passport</p>
                 <div
-                  className="relative"
+                  className="relative max-w-[200px]"
                   onClick={handleActivate}
                   onMouseEnter={() => setHover(true)}
                   onMouseLeave={() => setHover(false)}
@@ -156,7 +201,6 @@ const Apply = () => {
                   ></i>
                   <img
                     className=""
-                   
                     src="/public/sample-passport.jpg"
                     alt=""
                     srcSet=""
