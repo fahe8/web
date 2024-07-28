@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const PanelCards = () => {
   const cards = [
     {
-      image: "public/car.png",
+      image: "/public/car.png",
       title:
         "Visiting the U.S. & Arriving Via a Land Border or Selected Ferry?",
       text1:
@@ -18,7 +18,7 @@ const PanelCards = () => {
       link: "/home"
     },
     {
-      image: "public/doc.png",
+      image: "./public/doc.png",
       title: "Already Visiting & Need Proof of Visitor Status?",
       text1:
         "A traveler lawfully admitted (or paroled) into the U.S. may look up their most recent Form I-94 going back to 1983 for most classes of admission (or parole), and indefinitely for certain classes, such as diplomats and those admitted under the Compacts of Free Association. The corresponding Form I-94 may then be printed here. This is considered your lawful record of admission.",
