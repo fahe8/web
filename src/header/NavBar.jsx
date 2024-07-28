@@ -68,7 +68,7 @@ const NavBar = () => {
             <Link to="/home">
               <img
                 className="logo-left"
-                src="../public/logo-i94.png"
+                src="public/logo-i94.png"
                 alt=""
                 srcSet=""
               />
@@ -78,7 +78,7 @@ const NavBar = () => {
             <Link to="/home">
               <img
                 className="logo-right"
-                src="../public/logo.png"
+                src="public/logo.png"
                 alt=""
                 srcSet=""
               />

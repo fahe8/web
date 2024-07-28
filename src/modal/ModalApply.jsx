@@ -22,7 +22,7 @@ const ModalApply = ({ closeModal }) => {
             <div className=" p-6 flex-auto ">
               <div className="relative ">
                 <img className=""
-                  src="/public/sample_passport_annotated.jpg"
+                  src="public/sample_passport_annotated.jpg"
                   alt=""
                   srcset=""
                 />

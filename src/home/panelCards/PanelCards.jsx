@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const PanelCards = () => {
   const cards = [
     {
-      image: "/public/car.png",
+      image: "public/car.png",
       title:
         "Visiting the U.S. & Arriving Via a Land Border or Selected Ferry?",
       text1:
@@ -18,7 +18,7 @@ const PanelCards = () => {
       link: "/home"
     },
     {
-      image: "/public/doc.png",
+      image: "public/doc.png",
       title: "Already Visiting & Need Proof of Visitor Status?",
       text1:
         "A traveler lawfully admitted (or paroled) into the U.S. may look up their most recent Form I-94 going back to 1983 for most classes of admission (or parole), and indefinitely for certain classes, such as diplomats and those admitted under the Compacts of Free Association. The corresponding Form I-94 may then be printed here. This is considered your lawful record of admission.",
@@ -29,7 +29,7 @@ const PanelCards = () => {
       link: "/apply"
     },
     {
-      image: "/public/bag.png",
+      image: "public/bag.png",
       title: "Need A History Of Your Arrivals & Departures?",
       text1:
         "View your U.S. arrival and departure history for the past 10 years (certain types of travel history may not be provided). Please know, this travel history is a tool to assist you but not an official record for legal purposes",
@@ -39,7 +39,7 @@ const PanelCards = () => {
       link: "/recent"
     },
     {
-      image: "/public/red.png",
+      image: "public/red.png",
       title: "How Much Longer May I Remain in the U.S.?",
       text1:
         "View your compliance with the terms of your admission into the U.S. here. Please know, this tool is to assist you but is not an official record for legal purposes.",

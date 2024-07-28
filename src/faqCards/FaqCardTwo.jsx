@@ -172,14 +172,14 @@ const FaqCardTwo = () => {
         </div>
       </div>
       <div className="w-full">
-        <img src="/public/dni-front.jpg" alt="" srcset="" />
+        <img src="public/dni-front.jpg" alt="" srcset="" />
       </div>
       <div className="p-2"></div>
       <div className="w-full">
-        <img src="/public/dni-back.jpg" alt="" srcset="" />
+        <img src="public/dni-back.jpg" alt="" srcset="" />
       </div>
       <div className="w-full">
-        <img src="/public/visa.jpg" alt="" srcset="" />
+        <img src="public/visa.jpg" alt="" srcset="" />
       </div>
       <div className=" pt-6">
         <h3>Applying for a New I-94 - Travelers Requiring a Visa</h3>

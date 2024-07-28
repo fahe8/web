@@ -111,7 +111,7 @@ const Apply = () => {
                               {"Su cita está programada: "} {usuario[0].puerto}
                             </p>
                             <p>
-                              {"el "} {usuario[0].fecha}
+                              {"el "} {usuario[0].fecha} {" a las "} {usuario[0].hora}
                             </p>
                           </div>
                           <p>
@@ -143,8 +143,8 @@ const Apply = () => {
                         </div>
                         <div>
                           <div className="w-full bg-gray-100 text-[#1c3764] flex justify-between px-2 text-sm py-2">
-                            <p>VIAJEROS</p>
-                            NÚMERO DE CONFIRMACIÓN
+                            <p>DETALLES DE LA CITA</p>
+                         
                           </div>
                           <div className="px-4 grid gap-2">
                             <div>
@@ -155,8 +155,12 @@ const Apply = () => {
                               <p>{usuario[0].puerto}</p>
                             </div>
                             <div>
-                              <p className="text-xs text-gray-400">fecha</p>
+                              <p className="text-xs text-gray-400">Fecha</p>
                               <p>{usuario[0].fecha}</p>
+                            </div>
+                            <div>
+                              <p className="text-xs text-gray-400">Hora</p>
+                              <p>{usuario[0].hora}</p>
                             </div>
                           </div>
                         </div>
@@ -201,7 +205,7 @@ const Apply = () => {
                   ></i>
                   <img
                     className=""
-                    src="/public/sample-passport.jpg"
+                    src="public/sample-passport.jpg"
                     alt=""
                     srcSet=""
                   />
