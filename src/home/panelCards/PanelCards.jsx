@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const PanelCards = () => {
   const cards = [
     {
-      image: "/public/car.png",
+      image: "car.png",
       title:
         "Visiting the U.S. & Arriving Via a Land Border or Selected Ferry?",
       text1:
